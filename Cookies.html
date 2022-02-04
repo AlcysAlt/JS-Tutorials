@@ -1,0 +1,37 @@
+<html>
+    <h1 id="temp">
+        Cookie
+    </h1>
+    <body>
+        <script type="text/javascript">
+            function editCookie(name, value){
+            document.cookie = name + "=" + escape(value) + ";";
+            };
+            //View all cookies at once.
+            function viewCookies(){
+                alert(document.cookie);
+            };
+            function deleteCookie(name){
+                document.cookie = name + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+            };
+            
+            //View all cookies, one at a time.
+            function viewCookiesList(){
+                //Make array name cookies, 
+                //go through all values stored in documents.cookie 
+                //and split them into seperate objects in the array, everytime ";" is encountered.
+                cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++){
+                    //Go through cookies array and send an alert with each one seperately.
+                    alert(cookies[i]);
+                }
+            };
+            //Cookies can be modified by changing its value
+            editCookie("sessionid",34342);
+            viewCookies();
+            document.location;
+            
+            
+        </script>
+    </body>
+</html>
